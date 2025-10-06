@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Inventory Report</h2>
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Product</th><th>Location</th><th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in report %}
+    <tr>
+      <td>{{ r.product.name }}</td>
+      <td>{{ r.location.name }}</td>
+      <td>{{ r.qty }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

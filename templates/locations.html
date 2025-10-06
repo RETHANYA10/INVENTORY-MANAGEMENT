@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Locations</h2>
+  <a href="/add_location" class="btn btn-primary">+ Add Location</a>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th><th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for loc in locations %}
+    <tr>
+      <td>{{ loc.id }}</td>
+      <td>{{ loc.name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
